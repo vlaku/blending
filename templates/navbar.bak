@@ -1,0 +1,42 @@
+{% load staticfiles %}
+{% load static %}
+{% load static from staticfiles %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+{% load inclusion_tags %}
+
+
+
+
+
+<div class="navcol center " >
+
+<span class="btn btn-outline-dark btn-sm"><a href="{% url 'products:list' %}">Items</a></span>
+<span class="btn btn-outline-dark btn-sm"><a href="{% url 'tags:list' %}">Tags</a></span> 
+
+
+	{% if request.user.is_superuser %}
+	<span class="btn btn-outline-dark btn-sm"><a href="{% url 'sellers:transactions' %}">Transactions</a></span> 
+	{% endif %}
+
+	{% if request.user.is_authenticated %}
+<span class="btn btn-outline-dark btn-sm"><a href="{% url 'accounts:home' %}">My profile</a></span>
+<span class="btn btn-outline-dark btn-sm"><a href="{% url 'accounts:logout' %}">Log Out</a></span> 
+<span class="btn btn-outline-dark btn-sm"><a href="{% url 'accounts:send_email2' %}">Contact</a></span>
+
+		{% else %}
+<span class="btn btn-outline-dark btn-sm"><a href="{% url 'accounts:login' %}">Login</a></span> 
+<span class="btn btn-outline-dark btn-sm"><a href="{% url 'accounts:signup' %}">Sign Up</a></span> 
+{% endif %}
+
+
+
+</div>
+
+
+
+
+
+

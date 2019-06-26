@@ -1,0 +1,534 @@
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext)
+
+@font-face{
+font-family:Ponomar;src:url("https://cdn.azbyka.ru/biblia/fonts/PonomarUnicode.ttf") format("truetype");font-style:normal;font-weight:400}
+
+@font-face{
+font-family:Loaded Ucs;src:url("https://cdn.azbyka.ru/biblia/fonts/HirmIEUcs8.eot?#iefix") format("embedded-opentype"),url("https://cdn.azbyka.ru/biblia/fonts/HirmIEUcs8.ttf") format("truetype");font-style:normal;font-weight:400}
+
+@font-face{
+font-family:Loaded UTFcs;src:url("https://cdn.azbyka.ru/biblia/fonts/PonomarUnicode.otf") format("opentype"),url("https://cdn.azbyka.ru/biblia/fonts/PonomarUnicode.woff") format("woff"),url("https://cdn.azbyka.ru/biblia/fonts/PonomarUnicode.ttf") format("truetype");font-style:normal;font-weight:400}
+
+.buttons{
+margin-top:8px;
+margin-bottom:5px
+}
+.btn,.buttons .l,.buttons .r{
+/* width:160px */
+}
+.btn {
+display:block;
+margin:1px 1px 1px 1px;
+text-align:center;
+font-weight:700;
+color:#fff;
+border:gray;
+border-style:solid;
+border-radius:3px;
+border-width:1px;
+-webkit-box-shadow: 0 1px 1px 1px  gray;
+box-shadow: 0 1px 1px 1px gray;
+
+/*
+text-shadow:0 -1px 0 gray;
+font:700 14px/1 Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif
+
+
+background:rgba(0,0,0,0.5);
+
+ */
+}
+
+
+/**[style], font, center {outline: 5px solid red;}
+img[alt=""] {border: 3px dotted red;}
+*/
+
+.btn-outline-dark a:hover{
+  text-decoration: none; 
+  color: white;
+}
+
+.btn:hover {
+  color: white;
+  background-color: black;
+}
+.btn a:hover{
+  text-decoration: none; 
+  color: white;
+}
+
+
+
+/*
+.inner_shadow {
+   -moz-box-shadow:    inset 0 0 3px #000000;
+   -webkit-box-shadow: inset 0 0 3px #000000;
+   box-shadow:         inset 0 0 3px #000000;
+}
+*/
+
+.lang-utfcs  .lang-utfcs-result, .verse-inner {
+    font-family: Loaded UTFcs;
+    line-height: 120%;
+}
+
+h7 {
+  font-family:Loaded UTFcs!important;
+}
+
+
+/* -------------------------------------- */
+
+
+/*Reset Border Box -
+It will make your padding consistent and prevent frustration.*/
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+@media (min-width: 1200px) {
+}
+
+
+body{
+    background: white url("../img/ep_naturalwhite.png") repeat;
+
+}
+
+* {
+  font-family: Monospace;
+  font-size: 100%;
+
+}
+
+.demoblend {
+      background: transparent url("../img/sand.pexels_blue-water-blur_zima.png") no-repeat;
+      padding: 60px;
+}
+
+
+.center{
+        text-align: center;
+}
+
+.navcol{
+ margin-bottom: 10px;
+       display: block;
+      margin-left: auto;
+      margin-right: auto;
+}
+.navcol a {
+    font-size: 100%;
+    font-weight: 600;
+    color:black;
+    text-decoration: none;  
+/*    border-bottom: 3px solid white;
+   background: white;*/
+*/}
+.navcol a::after {
+    /*content:" ";*/
+}
+
+.footer {
+ margin-top: 10em;
+ }
+
+.admin_contact_section {
+ margin-top: 10em;
+ 
+}
+/*
+ https://css-tricks.com/snippets/css/text-rotation/
+.rotate {
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+*/
+
+.profile_size {
+    font-size: 140%;
+    line-height: 220%;
+    text-decoration: underline;
+}
+
+.profile_card {
+   background: white url("../img/ep_naturalwhite.png") repeat;
+   
+ }
+
+.userstatus {
+}
+
+.hello-user{
+}
+
+.itemize {
+}
+
+.info{
+}
+
+.authuser{
+  margin-bottom: 10px;
+}
+
+.maincontent{
+  margin-top: 30px;
+}
+
+.searchbar{
+  margin-bottom: 30px;
+}
+
+.thumbnail{
+border: None;
+}
+
+/* .quiet wysteouje razem z .price, .issuer-name, .photo-title - wszystko dotyczy product_list_snippet.html*/
+.quiet {
+  /*color: gainsboro;*/
+}
+
+.photo-title a {
+  color: black;
+}
+
+.price {
+  color: black;
+
+}
+
+.issuer-name {
+    color: gray;
+}
+
+
+
+/* div w ktorym jest div beta ribbon */
+/* zastosowany na stronie /test/ */
+.beta-ribbon-wrapper {
+    width: 85px;
+    height: 88px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.beta-ribbon {
+    font-weight: bold;
+    text-align: center;
+    text-shadow: rgba(255,255,255,0.5) 0 1px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: relative;
+    padding: 7px 0;
+    left: -5px;
+    top: 11px;
+    width: 120px;
+    background-color: #ffea94;
+    background-image: -webkit-linear-gradient(top, #ffea94, #ffea5E);
+    background-image: linear-gradient(to bottom, #ffea94, #ffea5E);
+    color: #6a6340;
+    box-shadow: 0 0 3px rgba(0,0,0,0.3);
+    cursor: pointer;
+}
+
+
+
+
+
+
+.ikona_download::before{
+content: "\2b07";
+}
+
+
+.main-content {
+  margin: auto auto;
+  /*    margin: 0 top bottom,  auto left right
+  max-width: 550px; */
+  clear: both;
+}
+.main-nav{
+/*  max-width: 550px;*/
+  margin: 10px auto;
+  padding:10px;
+}
+
+
+.clearfix {
+  clear:both;
+}
+
+/****** ajax jquery ********/
+
+#purchase-btn{
+    /*border: solid 0.2px black;*/
+    color: white;
+    font-weight: 600;
+}
+
+#purchase-btn span {
+      border-bottom: 3px solid white;
+
+}
+
+button.buy-btn {
+  border: 1px solid #DA5B00 !important;
+  background: #DA5B00 !important;
+}
+
+button.buy-btn .ui-button-text {
+  color: #ffffff;
+}
+
+.ui-widget-header {
+  border: 1px solid #ffffff !important;
+  background: #ffffff !important;
+}
+
+/****** end ajax jquery ********/
+
+
+.btn-info a {
+  color: white;
+  font-weight: 800;
+}
+
+.btn-secondary a {
+  color: white;
+  font-weight: 800;
+  text-decoration: none; ## nie podkresli ale kolor zmieni na niebieski 
+
+}
+
+.addbutton{
+  
+}
+
+.btn-light a {
+  color: black;
+}
+
+
+
+.row h1 {
+  margin-top: 25px;
+  font-weight: 600;
+}
+
+
+.main-nav li {
+  display: inline;
+}
+
+
+.pull-right{
+  float:right;
+}
+.float-left{
+  float:left;
+}
+.first-nav{
+  padding-left:0px;
+}
+.col-primary{
+  width: 85%;
+}
+.col-sidebar{
+  padding-top: 20px;
+  width: 15%;
+}
+
+
+/*********** rating ************/
+
+.fieldset_moj {
+    display: block;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-top: 0.35em;
+    padding-bottom: 0.625em;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+
+/*  border: 0.01px solid white;
+    -moz-border-radius:8px;
+    -webkit-border-radius:8px;
+    border-radius:8px;
+*/
+/*    border-style: hidden;  #ja dopisalam
+  border-color: white;  #ja dopisalam
+  border-style: none;  #ja dopisalam*/
+}
+
+.rating {
+    float:left;
+}
+
+/* :not(:checked) is a filter, so that browsers that don’t support :checked don’t
+   follow these rules. Every browser that supports :checked also supports :not(), so
+   it doesn’t make the test unnecessarily selective */
+.rating:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+    clip:rect(0,0,0,0);
+}
+
+.rating:not(:checked) > label {
+    float:right;
+    width:1em;
+    padding:0 .1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:200%;
+    line-height:1.2;
+    color:#ddd;
+    text-shadow:1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating:not(:checked) > label:before {
+    content: '★ ';
+}
+
+.rating > input:checked ~ label {
+    color: #f70;
+    text-shadow:1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+    color: gold;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked + label:hover ~ label,
+.rating > input:checked ~ label:hover,
+.rating > input:checked ~ label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label {
+    color: #ea0;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating > label:active {
+    position:relative;
+    top:2px;
+    left:2px;
+}
+
+
+
+.progress { 
+  margin-bottom: 5px; 
+  border: solid gray 1px;
+  border-radius: 3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+}
+
+
+.progress-bar { text-align: left; }
+
+
+/*********moje***************/
+
+table, td, th {
+border: solid gray 0.1px;
+border-collapse: collapse;
+/* musi byc jezeli tabelka ma byc centered: */
+   margin-left: auto;
+   margin-right: auto;
+   text-align: center;
+}
+
+
+.cal tr:hover {
+background-color:gainsboro /*szary*/
+}
+
+td:hover {
+/* background-color:linen  */
+}
+
+
+table {
+border:solid gray 0.1px; /*border-collapse: collapse;*/
+/* border-spacing: 15px;  kmmbinezon kosmiczny dla tabelki; nie dziala przy collapse */
+/* width: 50%; to szerokosc wobec otaczajacego pojemnika */
+white-space: wrap; /* wrap dopasuje szerokosc kolumny do dlugosci stringu w niej zawartego */
+}
+
+
+/*########################### */
+
+
+
+.znacznik {
+	z-index:9999;
+	position:fixed;
+	right:20px;
+	top:50px;
+	width: auto;
+        height: auto;
+        -webkit-border-radius:5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	line-height:30px;
+	text-align:center;
+	cursor:pointer;
+	opacity:0.8;
+        text-align:  left;
+}
+
+
+/* ######################## wlasne rzyciski niezalezne od boostrapa */
+.btn.fiol {
+  /* default for <button>, but useful for <a> */
+  font-size: 100%;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+
+  /* create a small space when buttons wrap on 2 lines */
+  margin: 2px 0;
+
+  /* invisible border (will be colored on hover/focus) */
+  border: solid 1px transparent;
+  border-radius: 4px;
+
+  /* size comes from text & padding (no width/height) */
+  padding: 0.5em 1em;
+
+  /* make sure colors have enough contrast! */
+  text-decoration: none; 
+  background-color: transparent;
+}
+
+.btn.fiol:hover {
+  color: white;
+  background-color: black;
+}
+.btn.fiol a:hover{
+  text-decoration: none; 
+  color: white;
+}
+
+.profile {
+  margin: 10px 10px 10px 10px;
+  padding:10px 10px 10px 10px;
+}

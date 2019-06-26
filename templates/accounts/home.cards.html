@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class='row justify-content-center'>
+<div class='col-12'>
+<h1>Your Profile</h1>
+<hr/>
+</div>
+
+
+   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12  col" style="margin-bottom: 20px;">
+    <div class="card transpar" style="">
+      <div class="card-body">
+        <h4 class="card-title">Support</h4>
+            <div class='list-group'>
+                <a class='list-group-item' href=''></a>
+                <a class='list-group-item' href=''></a>
+            </div>
+      </div>
+    </div>
+</div>
+
+
+
+<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12  col" style="margin-bottom: 20px;' id='billing'>
+    <div class="card transpar">
+      <div class="card-body">
+        <h4 class="card-title">Billing</h4>
+            <div class='list-group'>
+                <a class='list-group-item' href=''>orders:list Orders</a>
+                <a class='list-group-item' href=''>billing-payment-method  Payment Methods</a>
+                <a class='list-group-item' href=''>Addresses</a>
+
+
+            </div>
+      </div>
+    </div>
+</div>
+
+
+<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12  col" style="margin-bottom: 20px;'>
+    <div class="card transpar">
+      <div class="card-body">
+        <h4 class="card-title">Account Details</h4>
+            <div class='list-group'>
+                <a class='list-group-item' href='{% url "accounts:user-update" %}'>Update Details</a>
+                <a class='list-group-item' href=''>Change Password</a>
+                <a class='list-group-item' href='{% url "sellers:dashboard" %}'>Library</a>
+
+            </div>
+
+      </div>
+    </div>
+</div>
+
+
+<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12  col" style="margin-bottom: 20px;'>
+    <div class="card transpar">
+      <div class="card-body">
+        <h4 class="card-title">Preferences</h4>
+            <div class='list-group'>
+                <a class='list-group-item' href=''>Email Marketing</a>
+
+            </div>
+
+      </div>
+    </div>
+</div>
+
+
+<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12  col" style="margin-bottom: 20px;'>
+    <div class="card transpar">
+      <div class="card-body">
+        <h4 class="card-title">History</h4>
+              <div class='list-group'>
+                <a class='list-group-item' href=''>Products</a>
+            </div>
+      </div>
+    </div>
+</div>
+</div>
+
+{% endblock %}

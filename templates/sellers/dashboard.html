@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{% block style %} {% endblock style %}
+{% load get_thumbnail %}
+{% load static from staticfiles %}
+{% load staticfiles %}
+{% load static %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+
+
+{%block title%}Dashboard{%endblock title%}
+
+
+{%block content%}
+
+<small></small>
+
+<div style="margin-left:10%;">
+<div class="row" style="margin-bottom: 15px;">
+<h1>{{title}}</h1>
+</div>
+
+
+
+
+
+
+
+{% if apply_form %}
+<div class="row" style="margin-bottom: 15px;">
+
+<form method="POST" action='' >  {% csrf_token %}
+<p>Rules of the marketplace:</p>
+<ol>
+	<li>Be kind </li>
+	<li>Sell well </li>
+	<li>Tell the truth</li>
+</ol>
+<p>{{ apply_form }} </p>
+
+<input type="submit"/>
+</form>
+
+
+
+
+
+
+{% else %}
+</div>
+{% endif %}
+
+
+<br/>
+
+
+<div class="row" style="margin-bottom: 15px;">
+
+
+{% if transactions  %}
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12  col" style="margin-bottom: 0px;">
+
+	{% if today_sales is None %}
+<p>Today's sales is 0 Peanuts </p>
+
+	{% else %}
+
+<p>Today's sales is {{today_sales}} Peanuts </p>
+
+{% include "sellers/transaction_list.html" with transaction_list=transactions_today %}
+
+	{% endif %}
+
+	<br/>
+	<hr/>
+
+<p>Recent Transaction History
+	(Total sales
+	{% if total_sales is None %} 0
+	{% else %} Peanuts {{total_sales | floatformat:'2'}}
+	{% endif %} )</p>
+
+
+
+{% include "sellers/transaction_list.html" with transaction_list=transactions %}
+
+
+<br><p><a href="{% url 'sellers:transactions' %}">View all transactions</a></p>
+
+</div>
+
+
+{% else %}
+You are welcome!
+{% endif %}
+
+
+
+
+</div>
+</div>
+
+
+
+{% endblock content %}

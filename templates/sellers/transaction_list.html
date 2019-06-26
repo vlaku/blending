@@ -1,0 +1,94 @@
+<style>
+.contents:hover {
+	font-weight: 600;
+}
+
+.linen {
+background-color: linen;
+
+}
+.gains {
+background-color: gainsboro;
+}
+
+
+/*
+.o {
+background-color: linen;
+}
+.to {
+background-color: gainsboro;
+}
+.tr {
+background-color: linen;
+}
+.thr {
+background-color: gainsboro;
+}
+.fv {
+background-color: linen;
+}
+*/
+
+</style>
+
+<div class="row header contents gains" style="border-bottom: solid gainsboro 1px;">
+
+
+<div id="prod-header" class="col-xs-3 col-sm-3 col-md-3 col-lg-3  product col-w o" style="margin-bottom: 0px; border: solid gray 0.5px;" title="Product" >
+Item
+</div>
+
+<div id="buyer-header" class="col-xs-2 col-sm-2 col-md-2 col-lg-2  buyer col-w to" style="margin-bottom: 0px; border: solid gray 0.5px;" title="Buyer" >
+Buyer
+</div>
+
+
+<div id="seller-header" class="col-xs-2 col-sm-2 col-md-2 col-lg-2  seller col-w tr" style="margin-bottom: 0px; border: solid gray 0.5px;" title="Seller">Seller</div>
+
+
+<div id="price-header" class="col-xs-1 col-sm-1 col-md-1 col-lg-1  sale_total col-w thr" style="margin-bottom: 0px; border: solid gray 0.5px;"  title="Price">
+Sale</div>
+
+
+
+<div id="date-header"  class="col-xs-4 col-sm-4 col-md-4 col-lg-4  date_time col-w fv" style="margin-bottom: 0px; border: solid gray 0.5px;" title="Date">Date</div>
+</div>  <!-- end row -->
+
+
+
+
+
+	{% for trans in transaction_list %}
+
+
+
+<div id='pokrowiec' class="{% cycle 'linen' 'gains' as rowcolor %}">
+
+
+<div class="row contents rowcolor" style="border-bottom: solid gainsboro 1px; ">
+
+
+<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3  product-c  col-w o" style="margin-bottom: 0px; border: solid gray 0.5px;" title="Product"><a href="{{trans.product.get_absolute_url}}" >
+	{{trans.product}}</a></div>
+
+<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2  buyer-c col-w to" style="margin-bottom: 0px; border: solid gray 0.5px;">
+<a href="{% url 'products:vendor_detail' trans.user %}" title="Buyer">{{trans.user.username}}</a></div>
+
+<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2  seller col-w tr" style="margin-bottom: 0px; border: solid gray 0.5px;"> <a href="{% url 'products:vendor_detail' trans.product.seller %}" title="Seller">{{trans.product.seller}}</a></div>
+
+<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1  sale_total-c col-w thr" style="margin-bottom: 0px; border: solid gray 0.5px;" title="Price">{{trans.price}}</div>
+
+<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4  date_time-c col-w fv"  style="margin-bottom: 0px; border: solid gray 0.5px; " title="Date">{{trans.timestamp}}</div>
+
+
+
+</div>  <!-- end row content1-->
+
+</div>
+
+
+{% endfor %}
+
+
+

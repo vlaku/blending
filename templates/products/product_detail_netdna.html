@@ -1,0 +1,420 @@
+{% extends "base.html" %}
+{% block style %}
+
+
+<style>
+/* cudze  - blok na dole */
+.glyphicon { margin-right:5px;}
+.rating .glyphicon {font-size: 20px;}
+.rating-num { margin-top:0px;font-size: 40px; }
+.progress { margin-bottom: 5px;}
+.progress-bar { text-align: left; }
+/* .mybak { background-color: maroon; }  */
+.rating-desc { margin-top: 10px;}
+.rating-desc .col-md-3 {padding-right: 0px;}
+.sr-only { margin-left: 5px;overflow: visible;clip: auto; }
+
+
+
+/* mitch */
+.fieldset_moj {
+    display: block;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-top: 0.35em;
+    padding-bottom: 0.625em;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+
+	border: 0.01px solid white;
+    -moz-border-radius:8px;
+    -webkit-border-radius:8px;
+    border-radius:8px;
+
+/* 	border-style: hidden;  #ja dopisalam
+	border-color: white;  #ja dopisalam
+	border-style: none;  #ja dopisalam */
+}
+
+.rating {
+    float:left;
+}
+
+/* :not(:checked) is a filter, so that browsers that don’t support :checked don’t
+   follow these rules. Every browser that supports :checked also supports :not(), so
+   it doesn’t make the test unnecessarily selective */
+.rating:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+    clip:rect(0,0,0,0);
+}
+
+.rating:not(:checked) > label {
+    float:right;
+    width:1em;
+    padding:0 .1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:200%;
+    line-height:1.2;
+    color: gainsboro;
+/*    text-shadow:1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);  */
+}
+
+.rating:not(:checked) > label:before {
+    content: '★ ';
+}
+
+.rating > input:checked ~ label {
+    color: maroon;
+/*    text-shadow:1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0,0,0,.5);  */
+}
+
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+    color: maroon;
+/*    text-shadow:1px 1px maroon, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);*/
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked + label:hover ~ label,
+.rating > input:checked ~ label:hover,
+.rating > input:checked ~ label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label {
+    color: maroon;
+ /*     text-shadow:0px 0px white, 2px 2px white, .1em .1em .2em rgba(0,0,0,.5);  */
+}
+
+.rating > label:active {
+    position:relative;
+    top:2px;
+    left:2px;
+}
+
+</style>
+
+
+
+
+
+
+<script>
+$(document).ready(function(){
+   {% block jquery %}
+
+$(".rating input[value='{{my_rating}}']").attr("checked", "checked")
+
+$(".rating input[type='radio']").click(function(event){
+    var inputValue = $(this).val()
+    console.log(inputValue)
+
+var request = $.ajax({
+method: "POST",
+url: "{% url 'products:ajax_rating' %}",
+data: {
+  product_id: "{{ object.id }}",
+  rating_value: inputValue,
+/*  review_text: ...  */
+}  })
+request.done(function(data){
+    /*  przekazanie tego co w data do django View */
+    
+})
+request.fail(function(jqXHR, textStatus){
+if (jqXHR.status == 404){
+  alert("Page not found!")
+  } else if (jqXHR.status == 403){
+    alert("You must be logged in to view this")
+  }
+  else {
+    alert("There was an error with your request. Please try again later.")
+  }  })
+})
+
+
+
+   $("#purchase-btn").click(function(event){
+    event.preventDefault()
+    var purchaseBtn = $(this)
+    $("#dialog-confirm").fadeIn("300")
+    $("#dialog-confirm").dialog({
+      resizable: false,
+      height: 350,
+      width: 350,
+      modal: true,
+      buttons: {
+        1: {
+          id: "close",
+          text: "Confirm",
+          click: function(){
+                console.log("confirm")
+                // teraz odbywa sie transakcja
+
+var request = $.ajax({
+  method: "POST",
+  url: "{% url 'checkout' %}",
+  data: {
+    product_id: "{{ object.id }}",
+  }
+})
+
+request.done(function(data){
+  console.log(data.download)
+  console.log(data.preview)
+  purchaseBtn.before("<p><a href='" + data.download + "'>Download</a></p><p><a href='" + data.preview + "'>Preview</a>")
+  purchaseBtn.fadeOut(100)
+
+// console.log("working...")
+// if (data.works){
+//  $("#content").html(data.time)
+// }
+})
+request.fail(function(jqXHR, textStatus){
+if (jqXHR.status == 404){
+  alert("Page not found!")
+  } else if (jqXHR.status == 401){
+    alert("You must be logged in to view this")
+  }
+  else {
+    alert("There was an error with your request. Please try again.")
+  }
+})
+
+
+            $(this).dialog("close")
+          },
+          class: "buy-btn"
+        },
+        2: {
+          id: "close",
+          text: "Cancel",
+          click: function(){
+            $(this).dialog("close")
+          },
+          class: "cancel-btn"
+        } }
+
+    })
+    })
+   {% endblock jquery %}
+});
+</script>
+
+
+
+
+
+{% endblock style %}
+
+{% load get_thumbnail %}
+{% load static from staticfiles %}
+{% load staticfiles %}
+{% load static %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+
+
+
+{%block title%} {{object.slug}} {%endblock title%}
+{%block content%}
+
+<!-- for glyphicons -->
+<link rel="stylesheet" href = "https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" id="bootstrap-css">
+
+
+
+{% if request.user.is_authenticated %}
+{% if object %}
+
+<p class="row" style="margin-bottom: 10px;">
+
+<h1>{{object.title}}</h1>
+<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6  col2" style="margin-bottom: 10px;">
+
+<i>{{object.description}}</i>  by <a href="{{ object.seller.get_absolute_url }}"> {{object.seller.user.username}} </a><br>
+
+
+
+	{% if request.user.username == object.seller.user.username %}
+    <div class="btn btn-light">
+    <a href="{{object.get_edit_url}}">Edit</a> | <a href="{% url 'products:product_delete' pk=object.pk  %}">Delete</a></div>
+    <br>
+    {% endif %}
+
+
+<p>{{object.get_html_price|safe}} USD</p>
+<p>Purchases: {{ object.transaction_set.count }} </p>
+
+
+    {% if rating_avg.rating__avg %}
+
+<strong style="color:maroon;">Average rating: {{rating_avg.rating__avg|floatformat:2 }}</strong>
+    <br>
+Rated by {{rating_avg.rating__count}} users<br>
+{% endif %}
+
+{%  if not request.user == object.seller.user %}
+  <strong>My Rating: {{my_rating}} </strong> <br>
+  {% endif %}
+
+<br/>
+<div class="fieldset_moj">
+<div class="rating" >
+    <!-- <legend>Please rate:</legend> -->
+
+<!--<span class="glyphicon glyphicon-star"> </span>-->
+<!--</span><span class="glyphicon glyphicon-star-empty"> </span>-->
+
+
+    <input type="radio" id="star5" name="rating"  value="5" /><label for="star5" title="Great">5 stars</label>
+    <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Pretty good">4 stars</label>
+    <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Middle">3 stars</label>
+    <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Rather bad">2 stars</label>
+    <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Too bad">1 star</label>
+</div>
+</div>
+
+
+
+
+
+{% if object|get_thumbnail:'hd' %}
+<div class="">
+  <a href="{{object.media.url}}">
+   <img src="{{ object|get_thumbnail:'hd' }}"></a>
+ </div>
+ {% elif object|get_thumbnail:'sd' %}
+    <div class="">
+    <a href="{{object.media.url}}">
+    <img src="{{ object|get_thumbnail:'sd' }}"></a>
+    </div>
+ {% else %} Temporarily the picture is off
+
+{% endif %}
+
+</div>
+
+
+
+
+<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3  col4" style="margin-bottom: 30px;">
+
+</div>
+
+
+<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3  col4" style="margin-bottom: 30px;">
+<h2> </h2>
+{% if object in request.user.myproducts.products.all %}
+{% if object.media %}
+
+  <div class="btn btn-light" style="margin-bottom: 5px;"><a href="{{object.get_download}}">Download</a></div>
+  <div class="btn btn-light" style="margin-bottom: 5px;"><a href="{{object.get_download}}?preview=True">Preview</a></div>
+  <div class="btn btn-light" style="margin-bottom: 5px;"><a href="{% url 'products:download_slug' slug=object.slug %}">Download (inne linki)</a></div>
+
+  <br>
+{% endif %}
+{% endif %}
+
+<div class="purchase-area" style="margin: 15px 15px 15px 15px;">
+
+{% if request.user.username != object.seller.user.username %}
+  <div id="purchase-btn" class="btn btn-secondary" href="#">Purchase</div>
+  <div id='dialog-confirm' title='Confirm Purchase' style='display:none'>
+    <p>Your card on file will be charged. Do you like to proceed?</p>
+  </div>
+{% endif %}
+  <!--{% else %}-->
+  <!--<div id="purchase-btn" class="btn btn-warning" href="#">Pre-order</div>-->
+  <p>Item currently not available</p>
+  <br>
+</div>
+
+{% endif %}
+</div>  <!-- end of COL -->
+</div>
+
+
+</div>  <!-- end of ROW -->
+</div>  <!-- end of ROW -->
+
+
+
+
+
+
+
+<div class="col-xs-12 col-sm-12 col-md-9 col-lg-6  col4" style="margin-bottom: 30px;">
+<div class="well well-sm">
+    <div class="row">
+
+
+        <div class="col-xs-12 text-center">
+            {% if rating_avg.rating__count %}
+
+            <span class="">Average Rating:</span>
+            <h3 class="rating-num" style="color: red;">
+                {{rating_avg.rating__avg|floatformat:2 }}</h3>
+            <div class="rating"></div>
+            <div>
+   <span class="glyphicon glyphicon-user"></span>
+                {{rating_avg.rating__count}} users
+            </div>
+
+    {% else %} No rating yet.{% endif %}
+        </div>
+
+
+
+
+        <div class="col-xs-12">
+
+<!--dla kazdego usera ktory ocenil - rating od najlepszego do najgorszego -->
+{% for one in ocenki %}
+
+            <div class="row rating-desc">
+                <div class="col-xs-3 col-md-3 text-right">
+                    <span class="glyphicon glyphicon-star"></span>{{ one.ocenka }} {{ one.username }}
+                </div>
+                <div class="col-xs-8 col-md-9">
+                    <div class="progress progress-striped">
+
+                        <!--progress-bar-success-->
+                        <div class="progress-bar mybak" role="progressbar" aria-valuenow="100-{{ one.procent_slupka }}"  aria-valuemin="0" aria-valuemax="100" style="width:{{ one.procent_slupka }}%">
+                            <span class="sr-only">{{ one.procent_slupka }}% </span>
+                            {{ one.procent_slupka }}%
+                        </div>
+                    </div>
+                </div>
+            </div>
+                    {% endfor %}
+
+            <!-- end row -->
+        </div>
+    </div>
+</div>
+
+</div>
+
+<br>
+
+
+
+
+{%else%}
+<div class="">
+{{block.super}}
+	</div>
+
+{%endif%}
+<div class="clearfix">
+</div>
+
+
+
+
+
+
+{% endblock content %}

@@ -1,0 +1,47 @@
+{% load get_thumbnail %}
+
+
+
+
+
+{% for instance in product_list %}
+
+
+
+
+<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3  col2" style="padding-bottom: 60px; ">
+
+
+
+
+<span class="quiet photo-title">
+	<a href="{{instance.get_absolute_url}}" style="white-space: nowrap;">{{instance.title}}</a>
+</span>
+
+	 <div class="clearfix">
+	{% if instance|get_thumbnail:'micro' %}
+	 	    <a href="{{instance.get_absolute_url}}">
+			<img src="{{ instance|get_thumbnail:'micro' }}"/>
+			</a>
+	{% else %}
+		 <a href=""><img src="../static/img/waiting.png"/></a>
+		 <!--{# "{% static 'img/waiting.png' %} #}-->
+	{% endif %}
+	 </div>
+
+
+<span class="quiet price">{{instance.price}}</span>
+{% if instance.seller.user.username == request.user.username %} <a class="" href="{% url 'products:update_slug' slug=instance.slug %}">Edit</a>
+<!-- <a href="{{instance.get_edit_url}}">Edit2</a> -->
+{% else %} <span class="quiet issuer-name">{{instance.seller}} </span>{% endif %}
+
+
+
+</div>
+
+
+{% empty %}
+
+
+<li>No products yet.</li>
+{% endfor %}

@@ -1,0 +1,8 @@
+Subject:
+{{ subject }}
+
+Email:
+{{ from_email }}
+
+Content:
+{{ form_content|safe|striptags }}

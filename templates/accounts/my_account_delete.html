@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}My account{% endblock %}
+
+{% block breadcrumb %}
+  <li class="breadcrumb-item active">Delete my account</li>
+{% endblock %}
+
+
+
+{% block content %}
+
+     <h4> Are you sure you want to delete your account?</h4>
+<br>
+
+  <div class="row">
+    <div class="col-lg-6 col-md-8 col-sm-10">
+      <form method="POST" novalidate>
+        {% csrf_token %}
+
+         {% include 'includes/form.html' %}
+
+        <button type="submit" class="btn btn-warning">Delete</button>
+      </form>
+    </div>
+  </div>
+{% endblock %}

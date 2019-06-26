@@ -1,0 +1,18 @@
+body {
+  background: white url("../img/ep_naturalwhite.png") repeat;
+,
+}
+
+.logo {
+  font-family: 'Roboto Mono', sans-serif;
+}
+
+.logo a {
+  color: rgba(0,0,0,.9);
+}
+
+.logo a:hover,
+.logo a:active {
+  text-decoration: none;
+}
+

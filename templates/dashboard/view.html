@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+{% load inclusion_tags %}
+{% block title %}MAIN{% endblock title %}
+
+
+{% block body %}
+
+
+ <div class="container clearfix">
+  {% include 'navbar.html' %}
+ </div>
+
+
+
+{% block content %}
+
+<p><br>
+<div class="container intro">
+<div class="demoblend">
+
+<p><br>
+
+<h1>Blending</h1>
+<p><br>
+
+
+
+<p>We blend and mix photographs for aesthetic reasons and according to our sense of beauty. </p>
+<p>We present some 
+<span><a href="{% url 'products:list' %}">here</a></span> - in modest size.</p>
+
+<p>We sell them in digital and/or printed form. </p>
+
+<p>If you have some photographs you want to have blended, you can send to us. 
+<br>However, please proceed only after previous <a href="{% url 'accounts:send_email' %}">contacting us</a>.
+</p>
+
+
+<p><br>
+
+<hr class="invisible">
+
+
+<p><strong>Warnings:</strong></p>
+
+<p>Please be aware that:</p>
+<p>1. There can be cookies involved. </p>
+<p>2. Our independent watch-bear may be interested in having a look at you. From time to time.</p>
+
+</div>
+
+</div>
+<hr class="invisible">
+
+
+
+
+{% endblock content %}
+
+
+
+
+ <div class="container clearfix">
+  {% include 'footer.html' %}
+ </div>
+
+
+{% endblock body %}
+
+

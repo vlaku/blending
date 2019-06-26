@@ -1,0 +1,4 @@
+nie moze byc zdublowanego kodu:
+oprocz tej biblioteki w templates>products>product_detail.html zalaczony byl fragment kodu ktory wchodzil w konflikt z biblioteka all_ajax.js
+Nalezy dobrze sprawdzac stare kody i usuwac je. Na czas.
+Problem ten uniemozliwioal ocene produktu oraz jego zakup!

@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}My sales{% endblock title %}
+{% block style %}
+{% endblock style %}
+{% load get_thumbnail %}
+{% load static from staticfiles %}
+{% load staticfiles %}
+{% load static %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+{% load inclusion_tags %}
+
+
+{%block content%}
+<small>Recent Transactions</small>
+
+
+<div class="row" style="margin-bottom: 10px; ">
+
+<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6  col2" style="margin-bottom: 10px; ">
+<h1>Transactions</h1>
+</div>
+<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6  col2" style="margin-bottom: 10px; ">
+
+</div>
+</div>
+
+
+
+
+
+
+<div class="row">
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12  col2" style="margin-bottom: 10px;  white-space: normal;">
+
+
+{% if object_list %}
+
+{% include "sellers/transaction_list.html" with transaction_list=object_list %}
+
+{% else %}
+Please try later.
+{% endif %}
+</div>
+
+
+</div>
+
+
+{% endblock content %}

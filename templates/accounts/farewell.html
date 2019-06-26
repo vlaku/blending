@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block stylesheet %}
+  <link rel="stylesheet" href="{% static 'css/accounts.css' %}">
+{% endblock %}
+
+{% block body %}
+  <div class="container">
+    <h4 class="text-center logo my-4">
+    Bye bye.
+    </h4>
+
+
+    {% block content %}
+
+    {% endblock %}
+
+
+  </div>
+{% endblock %}

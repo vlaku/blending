@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+{% block title %}  {% endblock title %}
+{% block style %}
+
+{% endblock style %}
+{% load get_thumbnail %}
+{% load static from staticfiles %}
+{% load staticfiles %}
+{% load static %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+{% load inclusion_tags %}
+
+
+
+
+
+<!-- csrfmiddlewaretoken: "{{ csrf_token }}",
+
+success: function(data, textStatus, jqXHR ){
+		//	console.log(data)
+			alert("Zglasza sie Ajax.")  //wyskakuje okienko
+		console.log(data.works)
+		if (data.works) {
+			$("#my_content").html("Zglasza sie Ajax  " + data.time)
+		}
+			// console.log(textStatus)
+			// console.log(jqXHR)
+		},
+error: function(jqXHR, textStatus, errorThrown){
+			if (jqXHR.status == 404){
+				alert("Page not found")
+			}
+			// console.log(errorThrown)
+			// console.log(textStatus)
+			// console.log(jqXHR)
+		}
+ -->
+
+<script>
+$(document).ready(function(){
+   {% block jquery %}
+   $("#test-call").click(function(event){
+   	event.preventDefault();
+
+   	// $("#my_content").html("Zglasza sie Ajax")
+   	var request = $.ajax({
+   		method: "POST",
+   		url: "{% url 'test' %}",
+   		data: {
+   			testData: "--------Zglasza sie slownik json ze strony checkout/test.html   -- komunikat przechwycony przez request.POST.get w checkout.views.py: CheckoutTestView -------",
+   			csrfmiddlewaretoken: "{{ csrf_token }}",
+   		},
+   	})
+
+
+   	request.done(function(data){
+   		if (data.works){
+   			$("#my_content").html(data.time)
+   			console.log(data)
+   		}
+   	})
+   	request.fail(function(jqXHR, textStatus){
+   		if (jqXHR.status == 404){
+   			alert("Page not found!")
+	   		} else {
+	   			alert("There was an error with your request.")
+	   		}
+   	})
+   })
+
+   {% endblock jquery %}
+})
+</script>
+
+{%block content%}
+
+<div class="beta-ribbon-wrapper">
+<div class="beta-ribbon">
+    <a href="">Test</a>
+</div>
+</div>
+
+
+
+
+
+
+<div class="row" style="margin-bottom: 10px;">
+
+<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6  col2" style="margin-bottom: 10px;">
+
+    <br>
+
+    <br>
+<a id='test-call' href="https://www.bloomberg.com/view/articles/2018-03-13/-rexit-and-mike-pompeo-will-the-new-secretary-act-like-an-adult">Test JQuery</a>
+
+<br>
+
+<div id='my_content' style="color: maroon; font-weight: 800; border: solid 0.05px maroon; text-align: center; "></div>
+
+</div>
+
+<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6  col2" style="margin-bottom: 10px;">
+
+<!--<div class="row" style="margin-bottom: 10px;">-->
+<!--{{CAL_p|safe}} -->
+<!--</div>-->
+<!--<div class="row" style="margin-bottom: 10px;">-->
+<!--{{CAL|safe}} -->
+<!--</div>-->
+<!--<div class="row" style="margin-bottom: 10px;">-->
+<!--{{CAL_f|safe}} -->
+<!--</div>-->
+
+</div>
+</div>
+{% endblock content %}

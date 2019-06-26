@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block style %} {% endblock style %}
+{% load get_thumbnail %}
+{% load static from staticfiles %}
+{% load staticfiles %}
+{% load static %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+
+
+{%block title%} {{tag}} {%endblock title%}
+
+{%block content%}
+
+
+<h1></h1>
+<div class="row">
+
+	<!-- all products in this tag  --> 
+{% for product_instance in object.products.all %}
+<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+<!-- <a href="
+{{product_instance.thumbnail_set.all.first.media.url}}">
+{{product_instance}}</a> <br>
+ -->
+<!-- {{ product_instance.thumbnail_set.all }}
+{{ product_instance.thumbnail_set.first }}
+{{ product_instance.thumbnail_set.first.media }}
+{{ product_instance.thumbnail_set.first.media.url }}
+{{ product_instance.thumbnail_set.all.first.media.url }}
+ -->
+	{%  if product_instance.thumbnail_set.all.first.media  %}
+<small>
+<a href="
+{{product_instance.thumbnail_set.all.first.media.url}}">
+{{product_instance}}</a> </small>
+<br>
+
+
+	<a href="{{product_instance.get_absolute_url}}">
+		<img src="{{product_instance|get_thumbnail:'micro'}}" />
+	</a>
+
+<!-- 
+<br> {{product_instance.description|truncatechars:100}}
+<br> {{product_instance.price}} </li>
+ -->
+{% endif %}
+</div>
+{% empty %}
+No products yet.
+{% endfor %}
+
+</div>
+
+{% endblock content %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static from staticfiles %}
+{%block content%}
+
+
+<br>
+{% if object %}
+
+<h1>{{object.title}}</h1>
+{{object.price}}
+<p><i>{{object.description}}</i></p>
+
+{%endif%}
+
+{% endblock content %}

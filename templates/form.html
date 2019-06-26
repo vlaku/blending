@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static from staticfiles %}
+{%block content%}
+
+{% include "form_include.html" with form=form  submit_btn=submit_btn  %}
+
+
+
+<!--jesli plik koniecznie jest wymagany do zalaczenia, tak sie validate strone klienta:-->
+<script>
+    $('form').submit(function(event){
+    validated = true;
+
+    if ($('#some_file_input').get(0).files.length === 0) {
+        validated = false;
+        console.log("No files selected.");
+        // Or some div with image showing
+    }
+
+    if (validated != true) {
+        event.preventDefault();
+    }
+});
+</script>
+
+
+<!-- a tak server-side:
+
+    if len(request.FILES) != 0:
+
+    data = request.FILES['some_file']
+    ..do some work..
+    else:
+    return redirect('/nofile/' {'foo': bar})
+
+    -->
+
+{% endblock content %}

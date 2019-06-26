@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static from staticfiles %}
+
+{%block content%}
+
+
+  <form method="POST" class="contact-form" action=""
+        about=""
+        enctype='multipart/form-data'>{% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit" class="save btn btn-outline-danger"
+        value=" {% if submit_btn %} {{submit_btn}} {% else %} Submit {% endif %}" >
+             {% if submit_btn %} {{submit_btn}} {% else %} Submit {% endif %}</button>
+    </form>
+
+
+
+
+{% endblock content %}

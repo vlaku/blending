@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block style %} {% endblock style %}
+{% load get_thumbnail %}
+{% load static from staticfiles %}
+{% load staticfiles %}
+{% load static %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+
+
+{%block title%}{{vendor_name}} products{%endblock title%}
+
+
+{%block content%}
+
+<div class="row" style="margin-bottom: 10px; ">
+<h1>Items{% if vendor_name %} by {{ vendor_name }}{% endif %}: </h1>
+</div>
+
+<div class="row" style="margin-bottom: 10px; ">
+
+	<p><form method="GET" action="">
+	<input type="text" name="q" placeholder="Search words" value='{{ request.GET.q }}'>
+	<input type="submit" value="Search" />
+</form></p>
+</div>
+
+
+<div class="row" style="margin-bottom: 10px; ">
+
+{% include "products/product_list_snippet.html" with object_list=products %}
+
+</div>
+
+
+
+</div>
+</div>
+
+
+{% endblock content %} 

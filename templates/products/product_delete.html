@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block head_title %}Delete {{object}}{% endblock %}
+{% block content %}
+
+
+   <div class="row" style="margin-bottom: 20px;">
+       <h2>Delete {{object}}</h2>
+    </div>
+
+
+<h1></h1>
+
+
+  <div class="row">
+
+<p>Are you sure you want to delete <i>{{object}}</i>? </p>
+</div>
+
+<div class="aligned center" style="margin-bottom: 20px;">
+
+{% include "form_include.html" with form=form  submit_btn=submit_btn  %}
+
+<button type="" class="btn btn-outline-dark">
+    <a href="{% url 'sellers:product_list' %}">Return</a>
+</button>
+
+</div>
+
+{% endblock %}

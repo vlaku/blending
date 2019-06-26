@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block style %}
+{% endblock style %}
+{% load get_thumbnail %}
+{% load static from staticfiles %}
+{% load staticfiles %}
+{% load static %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+{% load inclusion_tags %}
+
+
+{%block title%}Offer{%endblock title%}
+
+
+{%block content%}
+
+
+
+<!-- <small>Items put on sale </small> -->
+
+{% if user.is_authenticated %}
+{% if user.is_staff %}
+<div class="btn btn-secondary btn-sm">
+	<a style="text-decoration: none;" href={% url 'sellers:product_create' %}>Add product</a></div>
+{% endif %}
+{% endif %}
+
+
+
+<div class="row" style="margin-bottom: 15px;">
+	<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3  col1" style="margin-bottom: 30px;">
+<h1>Items</h1>
+	</div>
+	<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6  col1" style="margin-bottom: 30px;">
+
+	</div>
+</div>
+
+{%  include 'search.html' %}
+
+
+
+
+<div class="row" style="margin-bottom: 10px; ">
+
+{% include "products/product_list_snippet.html" with object_list=object_list %}
+
+</div>
+
+
+
+
+
+
+
+{% endblock content %} 

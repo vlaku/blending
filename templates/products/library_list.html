@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block style %} {% endblock style %}
+{% load get_thumbnail %}
+{% load static %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+
+
+{%block title%}My Purchases{%endblock title%}
+
+{%block content%}
+
+
+<div class="row">
+<h1>My Purchases</h1>
+</div>
+
+<hr class="invisible">
+
+
+{% include 'search.html' %}
+
+<hr>
+
+<div class="row" style="margin-bottom: 10px;">
+
+{% for instance in product_list %}
+
+
+ <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3  col1" style="margin-bottom: 15px;">
+		{% if instance|get_thumbnail:'micro' %}
+		<a href="{{instance.media.url}}">
+   		<img src="{{ instance|get_thumbnail:'micro' }}"></a>
+
+  <div style="vertical-align: text-bottom"><a href="{{instance.get_absolute_url}}">{{instance.title}}</a>
+
+ <a href="{% url 'products:download_slug' instance.slug %}"><span class="ikona_download"></span></a>
+ 
+
+
+{% endif %}
+</div>
+</div>
+
+
+
+
+
+
+{% empty %}
+<li>No products yet.</li>
+{% endfor %}
+
+</div>
+
+
+
+
+
+
+
+
+
+{% endblock content %} 

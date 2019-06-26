@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% block title %}MAIN{% endblock title %}
+{% block style %} {% endblock style %}
+{% load get_thumbnail %}
+{% load static from staticfiles %}
+{% load staticfiles %}
+{% load static %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+
+{%block content%}
+
+
+<div class="row" style="border-bottom: solid gainsboro 5px;">
+
+
+<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6  col" style="margin-bottom: 0px;">
+
+
+<h1 style="margin-bottom: 20px;">Curated Products</h1>
+
+<!--{% include 'search.html' %}-->
+
+
+
+{% if curated.count > 0 %}
+
+
+
+
+{% for curated_section in curated %}
+	<div><h1> {{curated_section.section_name}} </h1>
+
+{% include "products/product_list_snippet.html" with product_list=curated_section.products.all|slice:":3" %}
+		<!--slice:":3" nie dziala jesli we view nie ma [:3]-->
+
+</div>
+{% endfor %}
+
+
+
+
+{% else %}
+<p>You do not have Curated Sections yet.</p>
+
+
+
+
+{% endif %}
+</div>
+
+
+
+
+<!-- prawa strona -->
+
+<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6  col" style="margin-bottom: 0px;">
+
+	<h1 style="">Top Tags</h1>
+	<!-- {{ products }}    {{ top_tags }}    -->
+	{% for tag in top_tags %}
+
+	<a class="btn btn-light btn-sm" style="background-color: linen;"  href="{% url 'tags:detail_slug' tag %}">{{tag}}</a>
+
+	<!-- <a href="{% url 'tags:detail' pk=tag.pk %}">{{tag}}</a>  -->
+	<!-- natomiast zapis tag.get_absolute_url blokuje serwer jako ERROR  -->
+	{% endfor %}
+
+
+
+
+	<h1 class="" style=""></h1>
+
+<div  style="">
+	{% include "products/product_list_snippet.html" with product_list=sug_products %}
+</div>
+</div>
+</div>
+
+<!-- {% for product in products %}
+<a href="{% url 'products:detail' pk=product.id %}">{{product}}</a><br>
+{% endfor %}
+ -->
+
+ <!-- {% for product in products %}
+<a href="{% url 'products:detail_slug' slug=product.slug %}">{{product}}</a><br>
+{% endfor %}
+-->
+
+ <!-- {% for product in products %}
+<a href="{% url 'products:detail_slug' slug=product.slug %}">{{product}}</a><br>
+{% endfor %}
+-->
+
+
+
+{% endblock content %}

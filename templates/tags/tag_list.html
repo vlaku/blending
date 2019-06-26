@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load get_thumbnail %}
+{% load static from staticfiles %}
+{% load staticfiles %}
+{% load static %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+{% block title %}TAGS{% endblock title %}
+{% block style %}
+<style>
+.abc{ }
+.def { }
+</style>
+{% endblock style %}
+
+
+{%block content%}
+
+
+<div class="container">
+
+	<div class="row" style="margin-bottom: 10px;">
+<h1>Tags</h1>
+</div>
+
+<div class="row" style="margin-bottom: 10px;">
+{%  include 'search.html' %}
+</div>
+
+
+
+
+<div class="row" style="margin-bottom: 10px;">
+
+
+
+{% for instance in object_list %}
+ <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3  col1" style="margin-bottom: 15px;">
+
+<h4 class="{% cycle 'abc' 'def' %}"
+	style="border-bottom: solid gainsboro 1px;
+			margin-bottom: 20px;
+			color: darkblue !important;">
+	<a href="{{instance.slug}}">{{instance.title}}</a>
+<!--<small style="color: gray">	({{instance.products.all.count}}-->
+	<!--product{% if instance.products.count > 1  %}s{%endif%}): </small>-->
+</h4>
+{% for one in instance.products.all %}
+<li>
+	<a href="{{one.get_absolute_url}}">{{one}}</a></li>
+{% endfor %}
+
+
+ </div>
+
+	{% empty %}
+No tags yet.
+
+
+
+{% endfor %}
+
+
+</div>
+</div>
+{% endblock content %}

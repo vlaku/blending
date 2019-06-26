@@ -1,0 +1,308 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"dec",
+				"text-decoration\tproperty"
+			],
+			[
+				"borde",
+				"border-style\tproperty"
+			],
+			[
+				"border",
+				"border-radius\tproperty"
+			],
+			[
+				"bo",
+				"border-style\tproperty"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/media/hd0/data/CODING/python_/django/ecom_nowe/ecom.org/templates/sellers/product_list_view.html",
+		"/media/hd0/data/CODING/python_/django/ecom/ecom/ecom.org/digitalmarket/settings_local.py",
+		"/media/hd0/data/CODING/python_/django/ecom/ecom/ecom.org/digitalmarket/settings_production.py",
+		"/media/hd0/data/CODING/python_/django/ecom/ecom/ecom.org/digitalmarket/settings_production_sqlite.py",
+		"/media/hd0/data/CODING/python_/django/ecom_nowe/ecom.org/products/views.py",
+		"/media/hd0/data/CODING/python_/django/ecom/ecom/ecom.org/digitalmarket/settings.py",
+		"/media/hd0/data/CODING/python_/django/ecom_nowe/ecom.org/static/css/base.css",
+		"/media/hd0/data/CODING/python_/django/ecom/ecom/ecom.org/digitalmarket/settings_pythonanywhere.py",
+		"/media/hd0/data/CODING/python_/django/ecom/ecom/ecom.org/digitalmarket/wsgi.py",
+		"/media/hd0/data/CODING/python_/django/ecom_nowe/ecom.org/sellers/views.py",
+		"/media/hd0/data/CODING/python_/django/ecom_nowe/ecom.org/templates/search.html",
+		"/media/hd0/data/CODING/python_/django/ecom_nowe/ecom.org/static/css/accounts.css",
+		"/media/hd0/data/CODING/python_/django/ecom_nowe/ecom.org/templates/products/product_list_snippet.html",
+		"/media/hd0/data/CODING/python_/django/ecom_nowe/ecom.org/templates/products/product_list.html",
+		"/media/hd0/data/CODING/python_/django/ecom_nowe/ecom.org/templates/products/list_view.html",
+		"/media/hd0/data/CODING/python_/django/ecom_nowe/ecom.org/accounts/views.py",
+		"/media/hd0/data/CODING/python_/django/ecom_nowe/ecom.org/digitalmarket/settings_production.py",
+		"/media/hd0/data/CODING/python_/django/ecom_nowe/ecom.org/templates/navbar.html",
+		"/media/hd0/data/CODING/python_/django/ecom_nowe/ecom.org/.env",
+		"/media/hd0/data/CODING/python_/django/ecom_nowe/ecom.org/digitalmarket/settings_pythonanywhere.py",
+		"/media/hd0/data/CODING/python_/django/ecom_nowe/ecom.org/digitalmarket/settings_local.py",
+		"/media/hd0/data/CODING/python_/django/ecom_nowe/ecom.org/accounts/urls.py",
+		"/media/hd0/data/CODING/python_/django/ecom_nowe/ecom.org/templates/accounts/my_account.html",
+		"/media/hd0/data/CODING/python_/django/ecom_nowe/ecom.org/templates/accounts/password_reset_form.html",
+		"/media/hd0/data/CODING/python_/django/ecom_nowe/ecom.org/digitalmarket/settings.py",
+		"/media/hd0/data/CODING/python_/django/ecom_nowe/ecom.org/templates/registration/password_reset_complete.html",
+		"/media/hd0/data/CODING/python_/django/ecom_nowe/ecom.org/templates/registration/password_reset_confirm.html",
+		"/media/hd0/data/CODING/python_/django/ecom_nowe/ecom.org/templates/registration/password_reset_done.html",
+		"/media/hd0/data/CODING/python_/django/ecom_nowe/ecom.org/templates/registration/password_reset_email.html",
+		"/media/hd0/data/CODING/python_/django/ecom_nowe/ecom.org/templates/registration/password_reset_form.html",
+		"/media/hd0/data/CODING/python_/django/ecom_nowe/ecom.org/templates/registration/password_reset_subject.txt",
+		"/media/hd0/data/CODING/python_/django/ecom_nowe/ecom.org/templates/accounts/password_reset_complete.html",
+		"/home/zyrafka/Env/virtual_ecom/lib/python3.5/site-packages/django/db/models/query.py",
+		"/media/hd0/data/CODING/python_/django/ecom_nowe/ecom.org/templates/accounts/signout.html",
+		"/media/hd0/data/CODING/python_/django/ecom_nowe/ecom.org/accounts/views.bak",
+		"/media/hd0/data/CODING/python_/django/ecom_nowe/ecom.org/accounts/forms.py",
+		"/media/hd0/data/CODING/python_/django/ecom_nowe/ecom.org/products/urls.py",
+		"/media/hd0/data/CODING/python_/django/ecom_nowe/ecom.org/products/forms.py",
+		"/media/hd0/data/CODING/python_/django/ecom_nowe/ecom.org/accounts/admin.py",
+		"/media/hd0/data/CODING/python_/django/ecom_nowe/ecom.org/sellers/models.py",
+		"/media/hd0/data/CODING/python_/django/ecom_nowe/ecom.org/sellers/admin.py",
+		"/media/hd0/data/CODING/python_/django/ecom_nowe/ecom.org/products/admin.py",
+		"/media/hd0/data/CODING/python_/django/ecom_nowe/ecom.org/products/models.py",
+		"/media/hd0/data/CODING/python_/django/ecom_nowe/ecom.org/dashboard/views.py",
+		"/media/hd0/data/CODING/python_/django/polls/functional/mysite/polls/views.py",
+		"/media/hd0/data/CODING/python_/django/polls/functional/mysite/polls/urls.py",
+		"/media/hd0/data/CODING/python_/django/polls/functional/mysite/mysite/urls.py",
+		"/media/hd0/data/CODING/python_/django/polls/functional/mysite/mysite/views.py",
+		"/home/zyrafka/eclipseworkspace/jsf-javaee-microblog/pom.xml",
+		"/media/hd0/data/programowanie/unix_linux/instrukcje/debian/debian-7_nie_zapuszczac.sh",
+		"/media/hd0/data/programowanie/unix_linux/instrukcje/debian/debian-1_0_java.sh",
+		"/home/zyrafka/eclipseworkspace/jsf-javaee-microblog/what_changed",
+		"/home/zyrafka/eclipseworkspace/jsf-javaee-microblog/src/main/webapp/dashboard.xhtml",
+		"/home/zyrafka/eclipseworkspace/jsf-javaee-microblog/src/main/webapp/template.xhtml",
+		"/home/zyrafka/eclipseworkspace/jsf-javaee-microblog_v1/run_ME_.sh",
+		"/home/zyrafka/eclipseworkspace/jsf-javaee-microblog/src/main/java/com/auth0/microblog/DashboardController.java",
+		"/home/zyrafka/eclipseworkspace/jsf-javaee-microblog/src/main/java/com/auth0/microblog/identity/CallbackServlet.java",
+		"/home/zyrafka/eclipseworkspace/jsf-javaee-microblog/src/main/java/com/auth0/microblog/identity/Auth0JwtCredential.java",
+		"/home/zyrafka/eclipseworkspace/jsf-javaee-microblog/src/main/java/com/auth0/microblog/identity/UserSession.java",
+		"/home/zyrafka/eclipseworkspace/jsf-javaee-microblog/src/main/java/com/auth0/microblog/identity/Auth0LoginAuthenticationMechanism.java",
+		"/home/zyrafka/eclipseworkspace/jsf-javaee-microblog/src/main/java/com/auth0/microblog/identity/Auth0IdentityStore.java",
+		"/home/zyrafka/eclipseworkspace/jsf-javaee-microblog/src/main/java/com/auth0/microblog/identity/IdentityStore.java",
+		"/home/zyrafka/eclipseworkspace/jsf-javaee-microblog/src/main/java/com/auth0/microblog/identity/Auth0Principal.java",
+		"/home/zyrafka/eclipseworkspace/jsf-javaee-microblog/src/main/java/com/auth0/microblog/identity/Auth0AuthenticationConfig.java",
+		"/home/zyrafka/eclipseworkspace/jsf-javaee-microblog/src/main/resources/project-defaults.yml",
+		"/home/zyrafka/eclipseworkspace/jsf-javaee-microblog/run_ME_.sh",
+		"/home/zyrafka/eclipseworkspace/jsf-javaee-microblog/src/main/webapp/WEB-INF/jboss-web.xml",
+		"/home/zyrafka/eclipseworkspace/jsf-javaee-microblog/src/main/java/com/auth0/microblog/MicroPostsService.java",
+		"/home/zyrafka/eclipseworkspace/jsf-javaee-microblog/src/main/webapp/WEB-INF/web.xml",
+		"/home/zyrafka/eclipseworkspace/jsf-javaee-microblog/src/main/webapp/index.xhtml",
+		"/home/zyrafka/eclipseworkspace/jsf-javaee-microblog/src/main/java/com/auth0/microblog/IndexController.java",
+		"/home/zyrafka/eclipseworkspace/jsf-javaee-microblog/src/main/java/com/auth0/microblog/MicroPost.java",
+		"/home/zyrafka/eclipseworkspace/jsf-javaee-microblog/src/main/java/com/auth0/microblog/MicroblogApplication.java",
+		"/media/hd0/data/CODING/python_/django/INSTRUKCJE/deployment/git.sh",
+		"/media/hd0/data/CODING/python_/django/INSTRUKCJE/namecheap/cloudflare/cloudflare.sh",
+		"/home/zyrafka/eclipseworkspace/jsf-javaee-microblog/src/main/webapp/WEB-INF/template.xhtml",
+		"/media/hd0/data/programowanie/unix_linux/instrukcje/debian/debian-0.sh",
+		"/media/hd0/data/CODING/python_/django/INSTRUKCJE/deployment/nginx-emperor.sh",
+		"/media/hd0/data/prawosl/read/modlitwy/grk/esperinos",
+		"/media/hd0/data/CODING/python_/django/INSTRUKCJE/wszystkie_moje_kursy",
+		"/media/hd0/data/prawosl/read/modlitwy/grk/doksologia_megala",
+		"/media/hd0/data/prawosl/read/modlitwy/grk/modl_og_z_tlum",
+		"/media/hd0/data/prawosl/read/modlitwy/grk/eksopsalm",
+		"/media/hd0/data/prawosl/read/modlitwy/grk/psalmy/ps_102",
+		"/media/hd0/data/prawosl/read/modlitwy/grk/mezoniktikou__akolouffia_tou",
+		"/media/hd0/data/programowanie/unix_linux/instrukcje/multiboot_usb",
+		"/media/hd0/data/CODING/python_/django/ecom_nowe/ecom.org/PARTS",
+		"/media/hd0/data/prawosl/read/modlitwy/grk/lit_users.uoa.gr_translation",
+		"/media/hd0/data/prawosl/read/modlitwy/grk/matins_ΑΚΟΛΟΥΘΙΑ_ΤΟΥ_ΟΡΘΡΟΥ",
+		"/media/hd0/data/prawosl/read/modlitwy/grk/psalmy/ps_118",
+		"/media/hd0/data/CODING/python_/django/INSTRUKCJE/important",
+		"/media/hd0/data/prawosl/read/modlitwy/grk/ora_chas_6",
+		"/media/hd0/data/prawosl/read/modlitwy/grk/psalmy/ps_103",
+		"/media/hd0/data/CODING/python_/django/INSTRUKCJE/namecheap/cloudflare/certificates/INFO",
+		"/home/zyrafka/debian_files/debian-1_2_tomcat.sh",
+		"/home/zyrafka/debian_files/debian-1_0_java.sh",
+		"/media/hd0/data/CODING/python_/django/INSTRUKCJE/deployment/heroku.sh",
+		"/media/hd0/data/programowanie/unix_linux/boot_loading/multiboot/multiboot.txt",
+		"/media/hd0/data/programowanie/unix_linux/boot_loading/configuring_the_bootloader",
+		"/media/hd0/data/programowanie/unix_linux/boot_loading/grub_praktyczne",
+		"/media/hd0/data/CODING/python_/django/ecom_nowe/ecom.org/templates/base.html",
+		"/media/hd0/data/CODING/python_/django/ecom_nowe/ecom.org/templates/dashboard/view.html",
+		"/media/hd0/data/CODING/python_/django/ecom_nowe/ecom.org/digitalmarket/wsgi.py",
+		"/media/hd0/data/CODING/python_/django/ecom_nowe/ecom.org/static/admin/img/calendar-icons.svg",
+		"/media/hd0/data/CODING/html_css/svg/svg1.html",
+		"/media/hd0/data/CODING/html_css/svg/our_first.svg",
+		"/media/hd0/data/CODING/python_/django/INSTRUKCJE/deployment/pythonanywhere.sh",
+		"/media/hd0/data/CODING/python_/django/ecom_nowe/ecom.org/sellers/urls.py",
+		"/media/hd0/data/CODING/python_/django/ecom_nowe/ecom.org/manage.py",
+		"/home/zyrafka/.virtualenv/py37/lib/python3.7/site-packages/django/utils/autoreload.py",
+		"/media/hd0/data/CODING/python_/django/ecom_nowe/ecom.org/digitalmarket/settings_production_sqlite.py",
+		"/media/hd0/data/CODING/python_/django/ecom_nowe/ecom.org/templates/index.html",
+		"/home/zyrafka/python_/django/ecom_nowe/ecom.org/staticfiles/css/base.css",
+		"/home/zyrafka/python_/django/ecom_nowe/ecom.org/static/css/accounts.css",
+		"/home/zyrafka/python_/django/ecom_nowe/ecom.org/templates/dashboard/view.html",
+		"/home/zyrafka/python_/django/ecom_nowe/ecom.org/sellers/views.py",
+		"/home/zyrafka/python_/django/ecom_nowe/ecom.org/templates/base.html",
+		"/home/zyrafka/python_/django/ecom_nowe/ecom.org/templates/sellers/transaction_list.html",
+		"/home/zyrafka/python_/django/ecom_nowe/ecom.org/templates/products/product_detail_netdna.html",
+		"/home/zyrafka/python_/django/ecom_nowe/ecom.org/templates/products/product_detail.html",
+		"/home/zyrafka/python_/django/ecom_nowe/ecom.org/templates/sellers/product_list_view.html",
+		"/home/zyrafka/python_/django/ecom_nowe/ecom.org/templates/sellers/transaction_list_view.html",
+		"/home/zyrafka/python_/django/ecom_nowe/ecom.org/templates/navbar.html",
+		"/home/zyrafka/python_/django/ecom_nowe/ecom.org/templates/products/product_list.html",
+		"/home/zyrafka/python_/django/ecom_nowe/ecom.org/templates/update_view.html",
+		"/home/zyrafka/python_/django/ecom_nowe/ecom.org/manage.py",
+		"/media/hd0/data/CODING/python_/django/ecom/PRODUCTION_settings/guni_nginx_setup.sh",
+		"/media/hd0/data/CODING/python_/django/ecom/ecom/ecom.org/templates/navbar.html"
+	],
+	"find":
+	{
+		"height": 40.0
+	},
+	"find_in_files":
+	{
+		"height": 119.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 40.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "urls.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 592.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 235.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

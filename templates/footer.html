@@ -1,0 +1,47 @@
+{% load staticfiles %}
+{% load static %}
+{% load static from staticfiles %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+{% load inclusion_tags %}
+
+
+
+
+
+<div class="navcol center footer" >
+
+<hr>
+<div class="userstatus">
+		{% if request.user.is_authenticated %}
+	<h7 class="info hello-user lang-utfcs">You are logged in as {{request.user}}.</h7>
+	    {% else %}
+	<h7 class="info hello-user lang-utfcs">
+		<a href="{% url 'accounts:login' %}">You are not logged in</a>
+	</h7>
+		{% endif %}
+</div>
+<hr>
+
+<div class="admin_contact_section">
+
+<div class="btn-sm">
+	<img style="width:40px;" 
+	src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAeCAYAAABuUU38AAAFYUlEQVR4nL2YS6vj2BHHf10UByGEMMaYi2maoellE7JsZj2rrPOB+kPlA2SZRRiGYcji0oRL04SLuRhjhDic1C2yOJIt2fKrmUyBsHReVf96H795fX39zAUSkUvTfwi5+9U1emnyVhAWE4jg5khQVP948COOQ8FvBRE3DR4NUSEUiqeEc12DdwkpMnqmaGSR3oS3gki7Fi0CWoYRU8zh/2iVXr6hy8mx0LeCcAdPNgIB4G3idzbIWRp50C2BNEXp2zNanIaYBJ22hvP9AO38xh7MQBJH5GLsHwSS/FjTQghoOOzTqhgvd8cHgkjmvv845wG2i5BSdh9zcEMf5ohOKE/kAOTmNNsvKwuICbkSCyKChDMWOkPtl29IURAe5vsM6CkRv64p369Oj3IfWuT24EzbBpJRrJYAmNlBUxdcdaSsM+zcDEQo3i4GgyAhIJLjUsKpVfSEwTVyx5uW4u3yILgIlhIqgovkNe6IyCizqOpVXqJ6qnUBizGDmQAhIneYoSNrEzKraR6fsu+LZAAvW+xlB23Enl8IIaCqhBD2z80K6xSx5xkjtmnQh/nE0k5p9wLxZISyoFjMiV+fsWQAhOUcWdRYG9G67uX5PuoKXw/Gk1E8zM8q4ruA9KTzmmK12B8uqqgqxXKO1iXu0Pz2eNIneUy0j0839U8WDTcn1NUh002AgHsivN8kst8lRcBiJK43J9oXgXK1xNbbfjMA6euasDwowHHSdjfJT4PincUv0Sj93oZk/Bm/rWnXL2z/9nfKuiZ8+kj96c+QchPJYoY9b/D1Bl3OM/5FRWpadFbhZsR//wepy2kBVfB0HQSA3tumD1fb0zPVx/foTz/iMaGzuhNgUCALpfn5EfyR4u2K8GGFzBWLMVvn3WqyQ+jJhdxVX6lX91lExkYpPr4ntZH605+I24Ywq0aV24H46xd8tyP94xfSw5LZX/9CWOXADe8eMoi+W5hmeRbIKLXfh0MYQtFZhVQF1kRCXY2zSldHdLlA5zX1hx/wRQ0x4W1Eq+Ig+wVliwpMhElOu9Yh9fstQlfwGGQrqSeO6ebD+xW23iJ1ibcRKcJJP3aRzDGHMDGVWUiuZXcBIQeXJUOLfLTDuGD0VunTYlDCao7vWsK8QkLIBY/bOgozHzWl+eieXz8u4zbeYiRtdqQmkpq4L3ZD0jLgsRs3p/nnv0i7JgMSiC8b4ma779rTdktcb5C6yt8v2/212N0zKPPugjNQSi9Wd30+BTFUhKPgnacM7txlOARsGwHJ56pk7bhlkDGhVUnRZSsAnjdIUaDzWcdNodTskW2CmLDtjrRrCcvF4e6yF+rQ4qdde2KJ4/6tpzevr//9vDfPkak9RuLXNWH1gATJgdetSduWMCuJT2u0LqFQ7KVBypDVaY7UJVoUOI5vGmzXEN4tJ+8Ux2RNws0Is7LTOSMXHsrq7kMg3oG5LWwsGZ4SoSpJmyZnqao4xE4yvIk5S5lla17ol4aUdi2YE+bVXtBe+Kl3AD044+FCL+Jcy8waFDPD2rhnOCQJikyMXyJPhjURKQNahxGIc+89IJ0SOK8xptxtBKYssDZhuzan1OO1w0J3oei5GdbkXiTMyrMN4lR89N/aCzzm0r8b7pfdTcuAJyHtYo6jYnDvmDpyANLNsGiIgFbhJHaOM9QxiOGYHjiMq/ZhTDoLdXPi4L2lurgKSug6VY8JTwlC2DPLKSuf0f8R4e659S/Dvv24lJX6uWOAPQ8d277/7aq2aLdpsNHH2WIEOWjO+WWR64SlrAQfnK3S3V2mz7lkhXNuBVci2v0UXP/tfQUcrBilRxXQcSsig3VTWj9J/xcsdEz/A1MQ4b/A2+JBAAAAAElFTkSuQmCC" 
+	/>
+
+		<!-- src='../static/img/mojebear_tiny.png' -->
+
+</div>
+
+
+
+<span class="lang-utfcs"><a href="{% url 'accounts:send_email' %}">Webmaster</a></span>
+<p>	<span></span> </p>
+</div>
+</div>
+
+
+
