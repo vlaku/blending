@@ -121,7 +121,7 @@ qtconsole==4.4.1
 requests==2.22.0
 requests-toolbelt==0.9.1
 resolver==0.2.1
-rsa==3.4.2
+rsa==4.1
 s3cmd==2.0.2
 s3transfer==0.1.13
 Send2Trash==1.5.0
