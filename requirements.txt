@@ -92,7 +92,7 @@ pbr==4.2.0
 pexpect==4.7.0
 pickleshare==0.7.5
 Pillow==5.2.0
-pipenv==2018.11.26
+pipenv==2022.1.8
 pluggy==0.7.1
 prettytable==0.7.2
 prometheus-client==0.6.0
